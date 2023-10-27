@@ -1,0 +1,37 @@
+When I was working for UPI integration development I got confused how to start UPI because there is no information for particular UPI integration development in android so I thought let help other people if they want to implement same. There is a different process of integration UPI in android app development and as well as web development, but before integration, we should have information about UPI.
+
+What is UPI?
+UPI is a sort of financial revolution where you need to remember only VPA (Virtual Payment Address) to make or receive payment. VPA is provided by your bank and you don’t need to remember the details of your bank account. UPI is a platform provided by NPCI (National Payments Corporation of India) to facilities interoperability amongst various banks and it’s a one-stop solution for multiple bank accounts.  One app allows all account holders to send and receive money using their smartphone with a single identifier. We need only UPI-Id and VPA without entering any bank account information, therefore the customer does not need to know the payee’s or payer’s IFSC code, bank account details and this makes the process simpler.
+
+What is VPA (Virtual Payment Address)?
+VPA is which you create and link to any of your accounts to make a secure payment.
+For example, vidya@yesbank or mobilenumber@yesbank which is easy to remember.
+
+Difference between NEFT vs IMPS vs UPI
+Credit: Axis Bank
+If you are traveling through taxi/cab, then you don’t need a particular app to pay money. You can just give your UPI id which is run on IMPS to the driver so he will request to you for money after that request message will get on your mobile phone asking for authentication.
+Now let’s talk about the integration of UPI in android development.
+For Android development first, you have to choose the UPI integration provider.
+Once you choose bank selected bank acts like PSP (payment service provider) like yes bank, ICICI, Axis Bank. You have to partner with that bank and they will provide SDK and related documents for implementation. The process of each bank is different and there is no need to create an SSL certificate like UPI integration in web development.
+
+Steps for yes bank UPI integration:
+1. Check whether you have the following pre-requisites before integration
+– Offer Letter with YES BANK should be accepted and signed.
+– Current/Nodal Account with YES BANK has already been opened or will be opened before Go-live.
+2. Add dependency to gradle and sync gradle
+The Intentsdk-release.aar needs to be added in the project as a dependency.
+Implementation’org.jbundle.util.osgi.wrapped:org.jbundle.util.osgi.wrapped.org.apach e.http.client:4.1.2′
+implementation ‘com.jakewharton:butterknife:8.4.0’
+annotationProcessor ‘com.jakewharton:butterknife-compiler:8.4.0’
+implementation ‘com.google.code.gson:gson:2.8.0’
+implementation ‘com.android.support:recyclerview-v7:26.1.0’
+3. Merchant app to pass request parameters as per the code specified in code
+4. If needed use the merchant Logo display
+5.  Then use the “onActivityResult” method inside your activity to retrieve the result
+
+Above all steps are for intent-based UPI integration and these steps may vary for other UPI provider banks.
+Please follow below link if you want to know more about UPI integration.
+https://blog.cashfree.com/upi-integration/#4_UPI_SDK_flow_integration.
+
+Thank you for reading my blog :)
+https://learnwithvidya.wordpress.com/2019/02/14/integration-of-upi-unified-payment-interface-in-android/
